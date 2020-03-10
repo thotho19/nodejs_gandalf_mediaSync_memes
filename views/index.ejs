@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0px 0px">
+    <button onclick="playVideo()">PLAY</button>
+    <button onclick="pasueVideo()">PASUE</button>
+
+    <video id="myVideo" style="width: 100%; height: 100%;" controls>
+            <source src="/Gandalf.mp4" type="video/mp4">
+    </video>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();   
+        var vid = document.getElementById("myVideo");
+        function playVideo(){
+            socket.emit('chat message', true);
+        }
+        function pasueVideo(){
+            socket.emit('chat message', false);
+        }
+        socket.on('chat message' , (msg)=>{
+            if(msg){
+                vid.play();
+            }else{
+                vid.pause();
+            }
+        });
+        </script>
+</body>
+</html>
