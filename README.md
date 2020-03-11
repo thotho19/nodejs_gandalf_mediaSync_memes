@@ -1,6 +1,6 @@
 ## nodejs_gandalf_mediasync
 
-`git clone [https://github.com/thotho19/nodejs_gandalf_mediasync.git](https://github.com/thotho19/nodejs_gandalf_mediasync.git)` <br/>
+`git clone https://github.com/thotho19/nodejs_gandalf_mediasync.git ` <br/>
 `npm init` <br/>
 `node app.js` <br/>
 
